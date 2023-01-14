@@ -63,7 +63,7 @@ while True:
             file.write(data[1].text.strip().replace('\n',''))
 
         async def main():
-            await client.send_file(-1001864302223, soup.title.text+'.txt')
+            await client.send_file(-1001864302223, str(num)+' '+soup.title.text+'.txt')
 
         with client:
             client.loop.run_until_complete(main())
