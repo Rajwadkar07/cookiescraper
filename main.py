@@ -18,7 +18,7 @@ while True:
     if '-' in soup.title.text:
         print('Cookie Found:', soup.title.text)
         data = soup.findAll('div', attrs={'class': 'panel-body'})
-        with open(soup.title.text+'.txt', 'w+') as file:
+        with open(str(num)+' - '+soup.title.text+'.txt', 'w+') as file:
             file.write(data[1].text.strip().replace('\n',''))
         print('Sleeping for 60 seconds...')
         sleep(60)
