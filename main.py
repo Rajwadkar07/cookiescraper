@@ -15,7 +15,7 @@ while True:
     soup = bs(res.text, 'html.parser')
 
     if '-' in soup.title.text:
-        print('Cookie Found:', soup.title.text)
+        print('Cookie Found for num', num,': ', soup.title.text)
         data = soup.findAll('div', attrs={'class': 'panel-body'})
 
         with open(str(num)+' '+soup.title.text+'.txt', 'w+') as file:
