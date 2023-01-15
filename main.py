@@ -4,7 +4,7 @@ from time import sleep
 from telethon import TelegramClient
 import os
 
-num = 12515
+num = 12543
 api_id = 1015622
 api_hash = '8bd892b1c3446a452c97700065350e52'
 client = TelegramClient('anoni', api_id, api_hash)
@@ -15,11 +15,17 @@ while True:
     soup = bs(res.text, 'html.parser')
 
     if '-' in soup.title.text:
-        print('Cookie Found for num', num,': ', soup.title.text)
+        print('Cookie Found', num,':', soup.title.text)
         data = soup.findAll('div', attrs={'class': 'panel-body'})
 
         with open(str(num)+' '+soup.title.text+'.txt', 'w+') as file:
-            file.write(data[1].text.strip().replace('\n',''))
+            try:
+                file.write(data[1].text.strip().replace('\n',''))
+            except:
+                print('Error on the host side. Sleeping for 60 seconds.')
+                num += 1
+                sleep(60)
+                continue
 
         async def main():
             await client.send_file(-1001864302223, str(num)+' '+soup.title.text+'.txt')
@@ -29,9 +35,10 @@ while True:
 
         os.remove(str(num)+' '+soup.title.text+'.txt')
 
-        print('Sleeping for 60 seconds...')
+        print('Cookie sent. Sleeping for 60 seconds...')
         sleep(60)
         num += 1
     else:
         print('No cookie found. Sleeping for 180 seconds...')
         sleep(180)
+        num += 1
