@@ -4,7 +4,7 @@ from time import sleep
 from telethon import TelegramClient
 import os
 
-num = 12602
+num = 12600
 api_id = 1015622
 api_hash = '8bd892b1c3446a452c97700065350e52'
 client = TelegramClient('anoni', api_id, api_hash)
