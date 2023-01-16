@@ -7,7 +7,7 @@ import os
 num = 12600
 api_id = 1015622
 api_hash = '8bd892b1c3446a452c97700065350e52'
-client = TelegramClient('anoni', api_id, api_hash)
+client = TelegramClient('anonim', api_id, api_hash)
 
 while True:
     url = 'https://m.rttar.com/paste.php?id='+str(num)
