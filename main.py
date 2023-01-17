@@ -4,10 +4,10 @@ from time import sleep
 from telethon import TelegramClient
 import os
 
-num = 12645
+num = 12647
 api_id = 1015622
 api_hash = '8bd892b1c3446a452c97700065350e52'
-client = TelegramClient('anonima', api_id, api_hash)
+client = TelegramClient('anonimus', api_id, api_hash)
 
 while True:
     url = 'https://m.rttar.com/paste.php?id='+str(num)
