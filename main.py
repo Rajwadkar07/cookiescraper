@@ -4,7 +4,7 @@ from time import sleep
 from telethon import TelegramClient
 import os
 
-num = 12647
+num = 12700
 api_id = 1015622
 api_hash = '8bd892b1c3446a452c97700065350e52'
 client = TelegramClient('anonimus', api_id, api_hash)
@@ -41,4 +41,3 @@ while True:
     else:
         print('No cookie found. Sleeping for 180 seconds...')
         sleep(180)
-        num += 1
